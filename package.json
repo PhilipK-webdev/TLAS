@@ -1,0 +1,25 @@
+{
+  "name": "ui-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.0",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.8",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.3",
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "styled-components": "^6.1.1"
+  }
+}
