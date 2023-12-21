@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 export const Header = ({ headerData }) => {
-  const path = headerData["path"].replace("v1", "V1");
-  const method = `${headerData["method"].toUpperCase()}`;
+  const path = headerData["path"]?.replace("v1", "V1");
+  const method = `${headerData["method"]?.toUpperCase()}`;
 
   return (
     <header>
