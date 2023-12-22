@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from "react";
 import { Header } from "./header/Header";
 import styled from "styled-components";
+import Main from "./main/Main";
 
 const SwaggerPage = () => {
   const [data, setData] = useState([]);
   const [headerData, setHeaderData] = useState({});
   const [loading, setLoading] = useState(true);
-
+  const [toggleNav, setToggleNav] = useState(true);
   useEffect(() => {
     (async () => {
       const response = await fetch("/api/data");
@@ -26,15 +27,27 @@ const SwaggerPage = () => {
         setLoading(false);
       }
     })();
-  }, [loading]);
+  }, []);
+
+  const handleToggleNav = (id) => {
+    setToggleNav(id === "request");
+  };
   return (
     <PageStyled>
       {loading ? (
         <div>Loading...</div>
       ) : (
         <>
-          <Header headerData={headerData} />
-          <main>Table</main>
+          {headerData && Object.keys(headerData).length > 0 && (
+            <Header headerData={headerData} />
+          )}
+          {data && Object.keys(data).length > 0 ? (
+            <Main
+              handleToggleNav={handleToggleNav}
+              toggleNav={toggleNav}
+              data={data}
+            />
+          ) : null}
         </>
       )}
     </PageStyled>
@@ -45,7 +58,6 @@ const PageStyled = styled.div`
   color: black;
   display: flex;
   flex-direction: column;
-  padding: 30px;
 `;
 
 export default SwaggerPage;

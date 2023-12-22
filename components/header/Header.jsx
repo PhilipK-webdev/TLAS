@@ -8,7 +8,7 @@ export const Header = ({ headerData }) => {
     <header>
       <HeaderBody>
         <HeaderTitle>
-          <span>{method}</span> {path}
+          <span style={{ marginRight: "10px" }}>{method}</span> {path}
         </HeaderTitle>
         <HeaderBreadCrumbs>
           All APIs <span className="entity">&gt;</span> {headerData["api"]}{" "}
@@ -24,6 +24,7 @@ const HeaderBody = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 69px;
+  padding: 30px;
 `;
 
 const HeaderTitle = styled.div`
@@ -32,7 +33,7 @@ const HeaderTitle = styled.div`
   color: #5f0096;
   font-weight: bold;
   span {
-    color: #bc89d1;
+    font-weight: 400;
   }
 `;
 const HeaderBreadCrumbs = styled.div`
@@ -44,7 +45,7 @@ const HeaderBreadCrumbs = styled.div`
   &::after {
     content: "";
     border-bottom: 1px solid #f0f0f0;
-    width: 1322px;
+    width: 90vw;
     margin-top: 10px;
     display: block;
   }
@@ -54,6 +55,6 @@ const HeaderBreadCrumbs = styled.div`
     color: #5f0096;
   }
   span {
-    color: #bc89d1;
+    font-weight: 400;
   }
 `;
