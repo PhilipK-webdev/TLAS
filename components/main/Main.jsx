@@ -12,7 +12,7 @@ const Main = ({ handleToggleNav, toggleNav, data }) => {
         req={"Request"}
         res={"Response"}
       />
-      <Table />
+      <Table data={data} />
     </MainContainer>
   );
 };
