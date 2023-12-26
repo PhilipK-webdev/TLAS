@@ -19,8 +19,10 @@ const Search = () => {
             </label>
           </form>
         </form>
+
         <button type="submit">Apply</button>
       </div>
+
       <div className="search-reset">Reset Filter</div>
     </SearchStyle>
   );
@@ -86,6 +88,16 @@ const SearchStyle = styled.div`
     position: absolute;
     top: 9px;
     left: 15px;
+  }
+  .search-form::after {
+    content: "";
+    border: 1px solid #ededed;
+    width: 26px;
+    margin-top: 10px;
+    position: absolute;
+    top: 10px;
+    right: 170px;
+    transform: rotateZ(90deg);
   }
 `;
 

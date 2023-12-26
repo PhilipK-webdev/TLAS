@@ -44,7 +44,7 @@ const HeaderBreadCrumbs = styled.div`
   position: relative;
   &::after {
     content: "";
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #ededed;
     width: 90vw;
     margin-top: 10px;
     display: block;
