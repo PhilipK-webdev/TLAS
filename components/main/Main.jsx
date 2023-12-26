@@ -3,7 +3,15 @@ import React from "react";
 import styled from "styled-components";
 import Nav from "./Nav";
 import Table from "./table/Table";
-const Main = ({ handleToggleNav, toggleNav, data }) => {
+const Main = ({
+  handleToggleNav,
+  toggleNav,
+  navData,
+  handleOnChange,
+  inputRef,
+  applySearch,
+  resetFilter,
+}) => {
   return (
     <MainContainer>
       <Nav
@@ -12,7 +20,13 @@ const Main = ({ handleToggleNav, toggleNav, data }) => {
         req={"Request"}
         res={"Response"}
       />
-      <Table data={data} />
+      <Table
+        navData={navData}
+        handleOnChange={handleOnChange}
+        inputRef={inputRef}
+        applySearch={applySearch}
+        resetFilter={resetFilter}
+      />
     </MainContainer>
   );
 };

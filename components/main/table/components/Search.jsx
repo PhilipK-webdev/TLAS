@@ -1,29 +1,39 @@
 import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
-const Search = () => {
+const Search = ({ handleOnChange, inputRef, applySearch, resetFilter }) => {
   return (
     <SearchStyle>
       <div className="search-container">
         <form className="search-form">
-          <input type="text" placeholder="Search" className="search-input" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="search-input"
+            ref={inputRef}
+          />
           <SearchIcon className="search-icon" sx={{ color: "grey" }} />
-          <form>
+          <div>
             <input
+              onChange={handleOnChange}
               type="checkbox"
               id="check"
               name="Show PII only"
               className="search-checkbox"
             />
-            <label for="check" className="search-label">
+            <label htmlFor="check" className="search-label">
               Show PII only
             </label>
-          </form>
+          </div>
         </form>
 
-        <button type="submit">Apply</button>
+        <button type="submit" onClick={applySearch}>
+          Apply
+        </button>
       </div>
 
-      <div className="search-reset">Reset Filter</div>
+      <div className="search-reset" onClick={resetFilter}>
+        Reset Filter
+      </div>
     </SearchStyle>
   );
 };

@@ -1,15 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import Search from "./components/Search";
-const Table = ({ data }) => {
+const Table = ({
+  navData,
+  handleOnChange,
+  inputRef,
+  applySearch,
+  resetFilter,
+}) => {
+  console.log("navData", navData);
   return (
     <TableStyle>
-      <Search />
+      <Search
+        handleOnChange={handleOnChange}
+        inputRef={inputRef}
+        applySearch={applySearch}
+        resetFilter={resetFilter}
+      />
     </TableStyle>
   );
 };
 
-const TableStyle = styled.table`
+const TableStyle = styled.div`
   background-color: #f0f0f0;
   height: 500px;
   width: 100%;
