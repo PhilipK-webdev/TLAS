@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import Nav from "./Nav";
-import Table from "./table/Table";
+import DataTable from "./table/DataTable";
 const Main = ({
   handleToggleNav,
   toggleNav,
@@ -20,7 +20,7 @@ const Main = ({
         req={"Request"}
         res={"Response"}
       />
-      <Table
+      <DataTable
         navData={navData}
         handleOnChange={handleOnChange}
         inputRef={inputRef}

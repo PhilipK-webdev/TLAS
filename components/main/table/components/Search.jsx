@@ -58,6 +58,10 @@ const SearchStyle = styled.div`
   .search-input:focus {
     outline: none;
   }
+  .search-input::placeholder {
+    font-weight: 600;
+    font-size: 1.1em;
+  }
   span {
     position: absolute;
     left: 10px;

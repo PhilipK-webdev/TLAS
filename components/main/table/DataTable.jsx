@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import Search from "./components/Search";
-const Table = ({
+import Table from "./components/Table";
+const DataTable = ({
   navData,
   handleOnChange,
   inputRef,
   applySearch,
   resetFilter,
 }) => {
-  console.log("navData", navData);
   return (
     <TableStyle>
       <Search
@@ -17,6 +17,9 @@ const Table = ({
         applySearch={applySearch}
         resetFilter={resetFilter}
       />
+      <TableContainer>
+        <Table data={navData} />
+      </TableContainer>
     </TableStyle>
   );
 };
@@ -28,5 +31,20 @@ const TableStyle = styled.div`
   margin-top: 10px;
   box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
   padding: 50px;
+  position: relative;
 `;
-export default Table;
+const TableContainer = styled.div`
+  background-color: #ffffff;
+  width: 100%;
+  heigth: auto;
+  margin-top: 15px;
+  &::after {
+    content: "";
+    border-bottom: 2px solid #d9d9d9;
+    width: 94.3%;
+    position: absolute;
+    top: 163px;
+  }
+`;
+
+export default DataTable;
